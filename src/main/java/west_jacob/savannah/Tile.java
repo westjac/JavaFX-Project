@@ -7,11 +7,18 @@ import java.beans.PropertyChangeSupport;
 public class Tile {
     //This is what is being observed by tileView
     private PropertyChangeSupport subject;
+    private static int id = 100;
     private Animal animal;
 
     public Tile(Animal a) {
+        id++;
         animal = a;
         subject = new PropertyChangeSupport(this);
+    }
+
+    public void updateAnimal(Animal a) {
+        animal = a;
+        subject.firePropertyChange("AnimalUpdate", null, this);
     }
 
     public String getTileLabel() {

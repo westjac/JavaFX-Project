@@ -1,12 +1,12 @@
 package west_jacob.savannah;
 
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
-
 import java.util.ArrayList;
 
 public class SavannahView extends GridPane {
@@ -35,6 +35,7 @@ public class SavannahView extends GridPane {
             btnPane.getRowConstraints().add(row);
             btnPane.getColumnConstraints().add(col);
         }
+        int i = 0;
     }
 
     public GridPane drawLayout() {

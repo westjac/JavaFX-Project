@@ -16,11 +16,16 @@ import javafx.stage.Stage;
 public class Layout {
     private Savannah model;
     private Controller controller;
+
+    public SavannahView getView() {
+        return view;
+    }
+
     private SavannahView view;
 
     public Layout(Stage stage) {
         model = new Savannah();
-        controller = new Controller(model);
+        controller = new Controller(model, this);
         view = new SavannahView(model);
 
         //Top Info Bar
@@ -111,6 +116,7 @@ public class Layout {
         RadioButton viewBtn = new RadioButton("View");
         addBtn.setToggleGroup(toggleGroup);
         viewBtn.setToggleGroup(toggleGroup);
+        toggleGroup.selectToggle(addBtn);
         addBtn.setAlignment(Pos.CENTER);
 
         VBox selectInfo = new VBox();
@@ -132,6 +138,7 @@ public class Layout {
 
         return sideInfo;
     }
+
     public void show() {
         //Show the view
     }
