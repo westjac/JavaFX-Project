@@ -5,8 +5,8 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.RadioButton;
 
-import static west_jacob.savannah.Layout.animalDropdown;
-import static west_jacob.savannah.Layout.toggleGroup;
+import static west_jacob.savannah.Layout.*;
+
 
 public class Controller {
     private Savannah model;
@@ -17,6 +17,9 @@ public class Controller {
         model = m;
         layout = l;
         view = layout.getView();
+
+        //Handle the press of the "New Day" button
+        newDayBtn.addEventFilter(ActionEvent.ACTION, new NewDayHandler());
     }
 
     //Listener for when a tile is pressed in the Savannah
@@ -43,6 +46,16 @@ public class Controller {
                 //TODO
             }
 
+        }
+    }
+
+    //Handler for when the new day button is pressed
+    public class NewDayHandler implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            model.newDay();
+            layout.update();
         }
     }
 

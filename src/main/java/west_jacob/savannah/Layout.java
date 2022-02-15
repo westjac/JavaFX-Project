@@ -20,6 +20,10 @@ public class Layout {
     //Button objects for the controller to access
     public static ComboBox<String> animalDropdown;
     public static ToggleGroup toggleGroup;
+    public static Button newDayBtn = new Button("New Day");
+    public static Text day;
+    public static Text filled;
+    public static Text died;
 
     public SavannahView getView() {
         return view;
@@ -86,12 +90,10 @@ public class Layout {
         resizeBtnGroup.add(resizeBtnFlow, 1, 0);
         resizeBtnGroup.add(resize, 0, 0);
 
-        Button newDayBtn = new Button("New Day");
-
         FlowPane textStatsFlow = new FlowPane(Orientation.VERTICAL);
-        Text day = new Text("Day: 0");
-        Text filled = new Text("Filled: 0");
-        Text died = new Text("Died: 0");
+        day = new Text("Day: 0");
+        filled = new Text("Filled: 0");
+        died = new Text("Died: 0");
         textStatsFlow.getChildren().addAll(day, filled, died);
         textStatsFlow.setAlignment(Pos.CENTER);
 
@@ -143,6 +145,9 @@ public class Layout {
         return sideInfo;
     }
 
+    public void update() {
+        day.setText("Day: " + String.valueOf(model.getDayCount()));
+    }
     public void show() {
         //Show the view
     }

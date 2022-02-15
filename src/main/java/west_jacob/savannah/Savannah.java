@@ -4,7 +4,16 @@ import java.util.ArrayList;
 
 public class Savannah {
 
-    private int DayCount = 0;
+    private int dayCount = 0;
+
+    public int getDayCount() {
+        return dayCount;
+    }
+
+    public int getDeadCount() {
+        return deadCount;
+    }
+
     private int deadCount = 0;
     private int width = 3;
     private int height = 3;
@@ -19,22 +28,6 @@ public class Savannah {
             Animal a = new None();
             animals.add(new Tile(a));
         }
-    }
-
-    public int getDayCount() {
-        return DayCount;
-    }
-
-    public void setDayCount(int dayCount) {
-        DayCount = dayCount;
-    }
-
-    public int getDeadCount() {
-        return deadCount;
-    }
-
-    public void setDeadCount(int deadCount) {
-        this.deadCount = deadCount;
     }
 
     public int getWidth() {
@@ -54,6 +47,9 @@ public class Savannah {
     }
 
     public void newDay() {
-
+        this.dayCount++;
+        for( Tile tile : this.animals ) {
+            tile.newDay();
+        }
     }
 }

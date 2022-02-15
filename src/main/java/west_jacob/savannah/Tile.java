@@ -26,6 +26,7 @@ public class Tile {
     }
 
     public void newDay() { //notify all function essentially
+        animal.newDay();
         subject.firePropertyChange("AnimalUpdate", null, this); //GRADING: TRIGGER
     }
 
