@@ -6,4 +6,10 @@ public class Zebra extends Animal {
         setHealth(8);
         setName("Z");
     }
+
+    @Override
+    public void newDay() {
+        int currentHealth = getHealth();
+        setHealth(currentHealth - 2);
+    }
 }

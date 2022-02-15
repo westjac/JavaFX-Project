@@ -6,4 +6,9 @@ public class None extends Animal{
         setHealth(0);
         setName("N");
     }
+
+    @Override
+    public void newDay() {
+
+    }
 }

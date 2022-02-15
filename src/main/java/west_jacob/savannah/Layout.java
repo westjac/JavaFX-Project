@@ -17,6 +17,10 @@ public class Layout {
     private Savannah model;
     private Controller controller;
 
+    //Button objects for the controller to access
+    public static ComboBox<String> animalDropdown;
+    public static ToggleGroup toggleGroup;
+
     public SavannahView getView() {
         return view;
     }
@@ -107,11 +111,11 @@ public class Layout {
         GridPane sideInfo = new GridPane();
         sideInfo.setAlignment(Pos.CENTER );
         Text animalInfo = new Text("Animal Info");
-        ComboBox<String> animalDropdown = new ComboBox<>();
+        animalDropdown = new ComboBox<>();
         animalDropdown.getItems().addAll("Cheetah", "Zebra");
         animalDropdown.getSelectionModel().select(0);
 
-        ToggleGroup toggleGroup = new ToggleGroup();
+        toggleGroup = new ToggleGroup();
         RadioButton addBtn = new RadioButton("Add");
         RadioButton viewBtn = new RadioButton("View");
         addBtn.setToggleGroup(toggleGroup);

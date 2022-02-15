@@ -24,9 +24,8 @@ public class SavannahView extends GridPane {
         ArrayList<Tile> tiles = model.getTiles();
         for(int i = 0; i < model.getHeight(); i++) {
             for(int j = 0; j < model.getWidth(); j++) {
-                TileView btn = new TileView(tiles.get(i+j));
 
-                btnPane.add(btn, j, i);
+                btnPane.add(new TileView(tiles.get(i * model.getHeight() + j)), j, i);
             }
             RowConstraints row = new RowConstraints();
             ColumnConstraints col = new ColumnConstraints();
@@ -35,7 +34,6 @@ public class SavannahView extends GridPane {
             btnPane.getRowConstraints().add(row);
             btnPane.getColumnConstraints().add(col);
         }
-        int i = 0;
     }
 
     public GridPane drawLayout() {
