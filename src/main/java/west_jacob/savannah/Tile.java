@@ -18,7 +18,7 @@ public class Tile {
 
     public void updateAnimal(Animal a) {
         animal = a;
-        subject.firePropertyChange("AnimalUpdate", null, this);
+        subject.firePropertyChange("AnimalUpdate", null, this); //GRADING: TRIGGER
     }
 
     public String getTileLabel() {
@@ -26,11 +26,11 @@ public class Tile {
     }
 
     public void newDay() { //notify all function essentially
-        subject.firePropertyChange("AnimalUpdate", null, this);
+        subject.firePropertyChange("AnimalUpdate", null, this); //GRADING: TRIGGER
     }
 
     public void attachObserver(TileView tileView) {
-        subject.addPropertyChangeListener(tileView);
+        subject.addPropertyChangeListener(tileView); //GRADING: SUBJECT
     }
 
     public void detachObserver(TileView tileView) {

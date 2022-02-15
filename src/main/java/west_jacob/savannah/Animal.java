@@ -4,9 +4,7 @@ public class Animal {
     private int health = 0;
     private String name = "";
 
-    public Animal() {
-
-    }
+    public Animal() {}
 
     public int getHealth() {
         return health;
@@ -24,7 +22,5 @@ public class Animal {
         this.name = name;
     }
 
-    public void newDay() {
-
-    }
+    public void newDay() {}
 }

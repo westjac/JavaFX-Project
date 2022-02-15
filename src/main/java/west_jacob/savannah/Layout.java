@@ -29,15 +29,17 @@ public class Layout {
 
     public Layout(Stage stage) {
         model = new Savannah();
+
+        view = new SavannahView();
+        view.setModel(model);
+
         controller = new Controller(model, this);
-        view = new SavannahView(model);
 
         //Top Info Bar
         HBox infoBarFlow = makeTopInfoBar();
 
         //Button Matrix
         GridPane btnPane = view.drawLayout();
-        //btnPane.setGridLinesVisible(true);
 
         //Side Info
         GridPane sideInfo = makeSideInfoBar();
@@ -62,8 +64,6 @@ public class Layout {
         pane.add(infoBarFlow, 0, 0, 2, 1);
         pane.add(btnPane, 1, 1);
         pane.add(sideInfo, 0, 1);
-        //pane.setGridLinesVisible(true);
-
 
         Scene scene = new Scene(pane);
         stage.setTitle("Savannah Simulator");

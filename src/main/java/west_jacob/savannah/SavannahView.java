@@ -15,16 +15,19 @@ public class SavannahView extends GridPane {
     private GridPane btnPane;
     private ArrayList<TileView> tileViews = new ArrayList<TileView>();
 
-    public SavannahView(Savannah Model) {
-        //Set Model
-        model = Model;
+    public SavannahView() {
 
         btnPane = new GridPane();
         btnPane.setAlignment(Pos.CENTER);
-        ArrayList<Tile> tiles = model.getTiles();
-        for(int i = 0; i < model.getHeight(); i++) {
-            for(int j = 0; j < model.getWidth(); j++) {
+        }
 
+    public GridPane drawLayout() {
+        btnPane = new GridPane(); //TODO: Not sure if this is needed to clear;
+        btnPane.setAlignment(Pos.CENTER);
+
+        ArrayList<Tile> tiles = model.getTiles();
+        for (int i = 0; i < model.getHeight(); i++) {
+            for (int j = 0; j < model.getWidth(); j++) {
                 btnPane.add(new TileView(tiles.get(i * model.getHeight() + j)), j, i);
             }
             RowConstraints row = new RowConstraints();
@@ -34,13 +37,12 @@ public class SavannahView extends GridPane {
             btnPane.getRowConstraints().add(row);
             btnPane.getColumnConstraints().add(col);
         }
-    }
 
-    public GridPane drawLayout() {
         return btnPane;
     }
 
-    public void setModel(Savannah model) {
+    public void setModel(Savannah m) {
+        model = m;
 
     }
 

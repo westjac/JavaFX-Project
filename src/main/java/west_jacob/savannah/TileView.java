@@ -35,7 +35,7 @@ public class TileView extends Button implements PropertyChangeListener {
     }
 
     @Override
-    public void propertyChange(PropertyChangeEvent evt) {
+    public void propertyChange(PropertyChangeEvent evt) { //GRADING: OBSERVE
         tile = (Tile) evt.getNewValue();
         setText(tile.getTileLabel());
     }
