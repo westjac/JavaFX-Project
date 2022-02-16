@@ -5,6 +5,8 @@ import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -30,11 +32,14 @@ public class TileView extends Button implements PropertyChangeListener {
         setOnAction(e -> {
             tileListener(e, tile);
         });
+        setGraphic(new ImageView(tile.getAnimalIcon()));
+        setContentDisplay(ContentDisplay.TOP);
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) { //GRADING: OBSERVE
         tile = (Tile) evt.getNewValue();
         setText(tile.getTileLabel());
+        setGraphic(new ImageView(tile.getAnimalIcon()));
     }
 }

@@ -6,6 +6,7 @@ public class Zebra extends Animal {
         setHealth(8);
         setName("Z");
         setFullName("Zebra");
+        setIcon("zebra.png");
     }
 
     @Override

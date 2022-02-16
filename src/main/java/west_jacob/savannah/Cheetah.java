@@ -6,6 +6,8 @@ public class Cheetah extends Animal {
         setHealth(10);
         setName("C");
         setFullName("Cheetah");
+        setIcon("cheetah.png");
+
     }
 
     @Override

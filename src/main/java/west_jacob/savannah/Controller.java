@@ -44,6 +44,7 @@ public class Controller {
                 t.updateAnimal(new None());
         } else if(toggleGroupValue == "View") {
             animalInfo.setText(t.getAnimalInfo());
+            infoImage.setImage(t.getAnimalIcon());
         }
     }
 

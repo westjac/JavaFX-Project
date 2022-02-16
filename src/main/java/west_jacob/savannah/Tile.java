@@ -1,5 +1,7 @@
 package west_jacob.savannah;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.beans.PropertyChangeSupport;
@@ -39,6 +41,10 @@ public class Tile {
 
     public String getAnimalInfo() {
         return animal.getInfo();
+    }
+
+    public Image getAnimalIcon() {
+        return animal.getIcon();
     }
 
     public void attachObserver(TileView tileView) {

@@ -4,11 +4,13 @@ import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -30,6 +32,7 @@ public class Layout {
     public static Button resizeEight = new Button("8x8");
     public static Text animalInfo = new Text("Animal Info");
     public static Scene scene;
+    public static ImageView infoImage = new ImageView();
 
     private SavannahView view;
     public SavannahView getView() {
@@ -131,7 +134,9 @@ public class Layout {
         selectInfo.setAlignment(Pos.CENTER);
         selectInfo.getChildren().addAll(animalDropdown, addBtn, viewBtn);
         sideInfo.add(selectInfo, 0, 0);
-        sideInfo.add(animalInfo, 0, 1);
+        VBox infoGroup = new VBox(animalInfo, infoImage);
+        infoGroup.setAlignment(Pos.CENTER);
+        sideInfo.add(infoGroup, 0, 1);
 
         RowConstraints sideRow0 = new RowConstraints();
         RowConstraints sideRow1 = new RowConstraints();
