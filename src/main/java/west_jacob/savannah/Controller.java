@@ -2,7 +2,11 @@ package west_jacob.savannah;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+
 import static west_jacob.savannah.Layout.*;
 
 public class Controller {
@@ -64,5 +68,27 @@ public class Controller {
         died.setText("Died: 0");
 
         view.drawLayout();
+    }
+
+    public void addHotkeys(Scene scene) {
+        scene.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+               if( ke.getCode() == KeyCode.N ) { //New Day
+                   model.newDay();
+                   layout.update();
+               }
+               else if( ke.getCode() == KeyCode.NUMPAD3 ) {
+                    resizeHandler(null, 3);
+                }
+               else if( ke.getCode() == KeyCode.NUMPAD5 ) {
+                   resizeHandler(null, 5);
+               }
+               else if( ke.getCode() == KeyCode.NUMPAD8 ) {
+                   resizeHandler(null, 8);
+               }
+
+            }
+        });
     }
 }

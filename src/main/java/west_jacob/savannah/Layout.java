@@ -29,6 +29,7 @@ public class Layout {
     public static Button resizeFive = new Button("5x5");
     public static Button resizeEight = new Button("8x8");
     public static Text animalInfo = new Text("Animal Info");
+    public static Scene scene;
 
     private SavannahView view;
     public SavannahView getView() {
@@ -72,6 +73,7 @@ public class Layout {
         pane.add(sideInfo, 0, 1);
 
         Scene scene = new Scene(pane);
+        controller.addHotkeys(scene);
         stage.setTitle("Savannah Simulator");
         stage.setScene(scene);
         stage.show();
