@@ -30,6 +30,13 @@ public class Tile {
         subject.firePropertyChange("AnimalUpdate", null, this); //GRADING: TRIGGER
     }
 
+    public boolean isAnimalAlive() {
+        if(animal.getHealth() == 0 && animal.getName() != "N")
+            return false;
+        else
+            return true;
+    }
+
     public void attachObserver(TileView tileView) {
         subject.addPropertyChangeListener(tileView); //GRADING: SUBJECT
     }

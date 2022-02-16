@@ -22,7 +22,9 @@ public class SavannahView extends GridPane {
         }
 
     public GridPane drawLayout() {
-        btnPane = new GridPane(); //TODO: Not sure if this is needed to clear;
+        btnPane.getChildren().clear();
+        btnPane.getRowConstraints().clear();
+        btnPane.getColumnConstraints().clear();
         btnPane.setAlignment(Pos.CENTER);
 
         ArrayList<Tile> tiles = model.getTiles();

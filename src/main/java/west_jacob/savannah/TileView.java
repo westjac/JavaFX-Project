@@ -2,6 +2,7 @@ package west_jacob.savannah;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
@@ -11,6 +12,8 @@ import javafx.scene.layout.RowConstraints;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
+import static west_jacob.savannah.Controller.tileListener;
 
 public class TileView extends Button implements PropertyChangeListener {
     //This is the observer in the observer pattern
@@ -25,13 +28,10 @@ public class TileView extends Button implements PropertyChangeListener {
         setText(tile.getTileLabel());
         setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         tile.attachObserver(this);
-        addEventFilter(ActionEvent.ACTION, new Controller.TileListener(tile));
+        setOnAction(e -> {
+            tileListener(e, tile);
+        });
 
-    }
-
-
-    public void update() {
-        //This is called by the tile when notifying that there is new info to display
     }
 
     @Override

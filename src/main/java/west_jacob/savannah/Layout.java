@@ -23,7 +23,11 @@ public class Layout {
     public static Button newDayBtn = new Button("New Day");
     public static Text day;
     public static Text filled;
+    public static int filledCount;
     public static Text died;
+    public static Button resizeThree = new Button("3x3");
+    public static Button resizeFive = new Button("5x5");
+    public static Button resizeEight = new Button("8x8");
 
     public SavannahView getView() {
         return view;
@@ -80,9 +84,7 @@ public class Layout {
         infoBarFlow.setAlignment(Pos.CENTER);
 
         FlowPane resizeBtnFlow = new FlowPane(Orientation.VERTICAL);
-        Button resizeThree = new Button("3x3");
-        Button resizeFive = new Button("5x5");
-        Button resizeEight = new Button("8x8");
+        //Resize Buttons
         resizeBtnFlow.getChildren().addAll(resizeThree, resizeFive, resizeEight);
 
         GridPane resizeBtnGroup = new GridPane();
@@ -147,6 +149,11 @@ public class Layout {
 
     public void update() {
         day.setText("Day: " + String.valueOf(model.getDayCount()));
+        died.setText("Died: " + String.valueOf(model.getDeadCount()));
+    }
+
+    public void resetLayout() {
+
     }
     public void show() {
         //Show the view
