@@ -28,6 +28,7 @@ public class Layout {
     public static Button resizeThree = new Button("3x3");
     public static Button resizeFive = new Button("5x5");
     public static Button resizeEight = new Button("8x8");
+    public static Text animalInfo = new Text("Animal Info");
 
     public SavannahView getView() {
         return view;
@@ -114,7 +115,7 @@ public class Layout {
     private GridPane makeSideInfoBar() {
         GridPane sideInfo = new GridPane();
         sideInfo.setAlignment(Pos.CENTER );
-        Text animalInfo = new Text("Animal Info");
+        //Animal Info
         animalDropdown = new ComboBox<>();
         animalDropdown.getItems().addAll("Cheetah", "Zebra");
         animalDropdown.getSelectionModel().select(0);

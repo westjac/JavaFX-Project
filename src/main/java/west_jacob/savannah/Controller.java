@@ -43,7 +43,7 @@ public class Controller {
             else
                 t.updateAnimal(new None());
         } else if(toggleGroupValue == "View") {
-            //TODO
+            animalInfo.setText(t.getAnimalInfo());
         }
     }
 

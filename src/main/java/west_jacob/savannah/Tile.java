@@ -37,6 +37,10 @@ public class Tile {
             return true;
     }
 
+    public String getAnimalInfo() {
+        return animal.getInfo();
+    }
+
     public void attachObserver(TileView tileView) {
         subject.addPropertyChangeListener(tileView); //GRADING: SUBJECT
     }

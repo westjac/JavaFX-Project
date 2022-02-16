@@ -4,6 +4,12 @@ public class Animal {
     private int health = 0;
     private String name = "";
 
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    private String fullName = "";
+
     public Animal() {}
 
     public int getHealth() {
@@ -23,4 +29,8 @@ public class Animal {
     }
 
     public void newDay() {}
+
+    public String getInfo() {
+        return fullName + "\nHealth: " + String.valueOf(health);
+    };
 }
