@@ -44,8 +44,4 @@ public class Tile {
     public void attachObserver(TileView tileView) {
         subject.addPropertyChangeListener(tileView); //GRADING: SUBJECT
     }
-
-    public void detachObserver(TileView tileView) {
-        subject.removePropertyChangeListener(tileView);
-    }
 }

@@ -21,7 +21,6 @@ public class TileView extends Button implements PropertyChangeListener {
     private int count = 0;
     private Tile tile;
 
-
     public TileView(Tile t) {
         id++;
         tile = t;
@@ -31,7 +30,6 @@ public class TileView extends Button implements PropertyChangeListener {
         setOnAction(e -> {
             tileListener(e, tile);
         });
-
     }
 
     @Override

@@ -1,12 +1,9 @@
 package west_jacob.savannah;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.RadioButton;
-
 import static west_jacob.savannah.Layout.*;
-
 
 public class Controller {
     public Savannah model;
@@ -23,7 +20,6 @@ public class Controller {
         resizeThree.setOnAction(e -> { resizeHandler(e, 3); });
         resizeFive.setOnAction(e -> { resizeHandler(e, 5); });
         resizeEight.setOnAction(e -> { resizeHandler(e, 8); });
-
     }
 
     //Listener for when a tile is pressed in the Savannah
@@ -57,6 +53,7 @@ public class Controller {
         }
     }
 
+    //Handler for the resize buttons
     public void resizeHandler(ActionEvent evt, int size) {
         model.resetSavannah(size);
         view.setModel(model);
@@ -68,5 +65,4 @@ public class Controller {
 
         view.drawLayout();
     }
-
 }

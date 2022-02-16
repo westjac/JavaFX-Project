@@ -30,18 +30,15 @@ public class Layout {
     public static Button resizeEight = new Button("8x8");
     public static Text animalInfo = new Text("Animal Info");
 
+    private SavannahView view;
     public SavannahView getView() {
         return view;
     }
 
-    private SavannahView view;
-
     public Layout(Stage stage) {
         model = new Savannah();
-
         view = new SavannahView();
         view.setModel(model);
-
         controller = new Controller(model, this);
 
         //Top Info Bar
@@ -153,10 +150,4 @@ public class Layout {
         died.setText("Died: " + String.valueOf(model.getDeadCount()));
     }
 
-    public void resetLayout() {
-
-    }
-    public void show() {
-        //Show the view
-    }
 }

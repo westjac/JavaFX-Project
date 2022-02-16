@@ -3,14 +3,13 @@ package west_jacob.savannah;
 public class Animal {
     private int health = 0;
     private String name = "";
+    private String fullName = "";
+
+    public Animal() {}
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
-    private String fullName = "";
-
-    public Animal() {}
 
     public int getHealth() {
         return health;

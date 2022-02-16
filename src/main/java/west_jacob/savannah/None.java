@@ -9,7 +9,5 @@ public class None extends Animal{
     }
 
     @Override
-    public void newDay() {
-
-    }
+    public void newDay() {}
 }

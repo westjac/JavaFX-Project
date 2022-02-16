@@ -1,8 +1,6 @@
 package west_jacob.savannah;
 
-import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -16,7 +14,6 @@ public class SavannahView extends GridPane {
     private ArrayList<TileView> tileViews = new ArrayList<TileView>();
 
     public SavannahView() {
-
         btnPane = new GridPane();
         btnPane.setAlignment(Pos.CENTER);
         }
@@ -45,12 +42,5 @@ public class SavannahView extends GridPane {
 
     public void setModel(Savannah m) {
         model = m;
-
     }
-
-    public void resize(int col, int row) {
-
-    }
-
-
 }
